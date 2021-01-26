@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var mongoUser   = require('../Model/mongoModel');
 /* GET home page. */
+
+router.get('/', function(req, res, next) {
+
+ res.send("I'm running.");
+
+});
 router.get('/get-records', function(req, res, next) {
 
   mongoUser.find({},(err,docs)=>{
